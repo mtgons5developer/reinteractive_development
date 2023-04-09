@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem 'ruby' "3.1.2"
-# gem 'ruby' "3.0.0"
+ruby "3.1.2"
+# ruby "3.0.0"
 gem "sentry-ruby"
 gem "sentry-rails"
 gem 'devise', '~> 4.9', '>= 4.9.2'
