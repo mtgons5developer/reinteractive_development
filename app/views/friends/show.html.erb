@@ -1,0 +1,78 @@
+<style>
+  .modal-content {
+    background-color: #333333;
+  }
+/* Change the background color of btn-close */
+.modal-header .btn-close {
+  background-color: gray;
+}
+/* Change the hover background color of btn-close */
+.modal-header .btn-close:hover {
+  background-color: white;
+}  
+.user-profile {
+  background-image: url('https://media.licdn.com/dms/image/C4E16AQG2r01A2OJDVg/profile-displaybackgroundimage-shrink_350_1400/0/1517584117066?e=1686182400&v=beta&t=unG1YQHkfsAPpJXT9nA6RX_F6UuP1u2gs1Xunl_2Lz8');
+  background-size: cover;
+  background-position: center;
+}
+.modal-backdrop {
+  opacity: 0.5;
+}
+</style>
+
+<div class="container user-profile">
+  <img src="<%=@friend.profile_img%>" data-bs-toggle="modal" data-bs-target="#exampleModal" width="10%" class="rounded-circle" alt="Example image">  
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="<%=@friend.profile_img%>" width="50%" class="rounded-circle mx-auto d-block" alt="Example image">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h2 class="display-4">
+    <%= @friend.first_name %>
+    <%= @friend.last_name %>
+    </h2>
+  <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <hr class="my-4">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <a class="btn btn-primary btn-lg" href="<%=@friend.linked_in%>" target="_blank" role="button">LinkedIn</a>
+</div>
+<br>
+<p style="color: green"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @friend.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @friend.phone %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @friend.twitter %>
+</p>
+
+<div>
+  <%= link_to "Edit", edit_friend_path(@friend), class: "btn btn-primary" %>
+  <%= link_to "Unfriend", @friend, method: :delete, class: "btn btn-danger" %>
+  <%= link_to "Back", friends_path, class: "btn btn-secondary" %>
+</div>

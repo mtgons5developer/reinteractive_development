@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  
+  <div class="container-fluid">
+    <%= link_to "Reinactive", root_path, class:"navbar-brand" %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+  
+        </li> 
+        <li class="nav-item">
+          <%= link_to "About Us", home_about_path, class:"navbar-brand" %>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to "Our Team", friends_path, class:"navbar-brand" %>
+        </li>        
+
+      </ul>
+
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+      <div class="col-lg-1 col-md-12 text-right">
+        <%= link_to "Sign In", new_user_session_path, class:"navbar-brand" %>
+      </div>
+
+      <div class="col-lg-2 col-md-12 text-right">
+        <%= link_to 'Sign up', new_user_registration_path, class: "navbar-brand" %>
+      </div>
+    </div>
+  </div>
+</nav>
