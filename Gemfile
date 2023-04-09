@@ -1,9 +1,14 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.0"
+# gem ruby "3.1.2"
+gem ruby "3.0.0"
 
 gem 'devise', '~> 4.9', '>= 4.9.2'
+
+gem "sentry-ruby"
+
+gem "sentry-rails"
 
 gem 'google-ads-googleads', '~> 22.0'
 
